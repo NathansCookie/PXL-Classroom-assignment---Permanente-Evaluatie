@@ -1,0 +1,112 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: #dceeff;
+	color: #1f2937;
+	font-family: "Segoe UI", Tahoma, sans-serif;
+	font-size: 1rem;
+}
+
+.page-shell {
+	width: calc(100% - 4rem);
+	min-width: 320px;
+	max-width: 1000px;
+	margin: 2rem auto;
+	padding: 2rem;
+	border-radius: 16px;
+	background: #ffffff;
+}
+
+h1 {
+	margin: 0 0 2rem;
+	font-size: 2rem;
+}
+
+.smurf-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.smurf-card {
+	position: relative;
+	min-width: 0;
+	padding: 1rem;
+	border: 1px solid #d4e6f8;
+	border-radius: 16px;
+	background: #f9fcff;
+}
+
+.smurf-card h2 {
+	margin: 0 0 0.5rem;
+	font-size: 1rem;
+}
+
+.smurf-card p {
+	margin: 0 0 0.5rem;
+}
+
+.smurf-card p:last-child {
+	margin-bottom: 0;
+}
+
+.smurf-role {
+	color: #1f4b82;
+}
+
+.smurf-image {
+	float: right;
+	width: 120px;
+	max-width: 50%;
+	height: auto;
+	margin: 0 0 0.5rem 1rem;
+}
+
+.featured-card {
+	border-width: 4px;
+}
+
+.leader-badge {
+	position: absolute;
+	top: 0.25rem;
+	right: 0.25rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.25rem;
+	background: #f2b134;
+	font-size: 0.5rem;
+}
+
+@media (max-width: 999px) {
+	.smurf-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 600px) {
+	.page-shell {
+		width: calc(100% - 2rem);
+		margin: 1rem auto;
+		padding: 1rem;
+	}
+
+	h1 {
+		margin-bottom: 1rem;
+	}
+
+	.smurf-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.smurf-image {
+		float: left;
+		margin: 0 1rem 0.5rem 0;
+	}
+
+	.smurf-card h2,
+	.smurf-card p {
+		clear: left;
+	}
+}
