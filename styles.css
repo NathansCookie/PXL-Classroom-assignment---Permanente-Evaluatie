@@ -4,40 +4,41 @@
 
 body {
 	margin: 0;
-	background: #dceeff;
+	background: #e6f3ff;
 	color: #1f2937;
 	font-family: "Segoe UI", Tahoma, sans-serif;
 	font-size: 1rem;
 }
 
-.page-shell {
+.page-box {
 	width: calc(100% - 4rem);
 	min-width: 320px;
 	max-width: 1000px;
 	margin: 2rem auto;
 	padding: 2rem;
-	border-radius: 16px;
-	background: #ffffff;
+	background: #d7deff;
+	
 }
 
 h1 {
 	margin: 0 0 2rem;
 	font-size: 2rem;
+	font-weight: 1000;
 }
 
 .smurf-grid {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	gap: 2rem;
 }
 
 .smurf-card {
 	position: relative;
-	min-width: 0;
 	padding: 1rem;
 	border: 1px solid #d4e6f8;
-	border-radius: 16px;
+	border-radius: 25px;
 	background: #f9fcff;
+	overflow: hidden;
 }
 
 .smurf-card h2 {
@@ -46,15 +47,12 @@ h1 {
 }
 
 .smurf-card p {
-	margin: 0 0 0.5rem;
-}
-
-.smurf-card p:last-child {
-	margin-bottom: 0;
+	margin: 0.5rem;
 }
 
 .smurf-role {
 	color: #1f4b82;
+	font-weight: 500;
 }
 
 .smurf-image {
@@ -65,19 +63,31 @@ h1 {
 	margin: 0 0 0.5rem 1rem;
 }
 
-.featured-card {
-	border-width: 4px;
-}
-
-.leader-badge {
+.leader-box {
 	position: absolute;
-	top: 0.25rem;
-	right: 0.25rem;
-	padding: 0.25rem 0.5rem;
+	top: 0.25%;
+	right: 0.50rem;
+	padding: 0.30rem 0.5rem;
 	border-radius: 0.25rem;
 	background: #f2b134;
-	font-size: 0.5rem;
+	font-size: 0.55rem;
+	font-weight: 500;
 }
+
+.roll-in { /* animation from https://codepen.io/nelledejones/pen/gOOPWrK */
+  animation: roll-in 2s ease infinite;
+}
+@keyframes roll-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-120deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
 
 @media (max-width: 999px) {
 	.smurf-grid {
@@ -86,7 +96,7 @@ h1 {
 }
 
 @media (max-width: 600px) {
-	.page-shell {
+	.page-box {
 		width: calc(100% - 2rem);
 		margin: 1rem auto;
 		padding: 1rem;
